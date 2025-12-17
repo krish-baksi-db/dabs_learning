@@ -1,5 +1,5 @@
 resources:
   schemas:
-    krish_dabs_learning:
+    krish_dabs_learning_schema:
       name: ${var.target_schema}
       catalog_name: ${var.target_catalog}

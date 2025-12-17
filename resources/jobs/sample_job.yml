@@ -11,9 +11,9 @@ resources:
         - name: source_table
           default: ${var.source_table}
         - name: target_schema
-          default: ${var.target_schema}
+          default: ${resources.schemas.krish_dabs_learning_schema.name}
         - name: target_catalog
-          default: ${var.target_catalog}
+          default: ${resources.schemas.krish_dabs_learning_schema.catalog_name}
         - name: target_table
           default: ${var.target_table}
         - name: distance_cutoff
@@ -33,8 +33,3 @@ resources:
 
       queue:
         enabled: true
-      environments:
-        - environment_key: Default
-          spec:
-            environment_version: "4"
-      performance_target: PERFORMANCE_OPTIMIZED

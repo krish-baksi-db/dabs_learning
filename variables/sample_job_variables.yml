@@ -6,7 +6,7 @@ variables:
 
   source_schema:
     description: "Source Schema"
-    default: "nyc_taxi"
+    default: "nyctaxi"
 
   source_table:
     description: "Source Table"
@@ -19,7 +19,6 @@ variables:
 
   target_schema:
     description: "Target Schema"
-    default: ""
 
   target_table:
     description: "Target Table"

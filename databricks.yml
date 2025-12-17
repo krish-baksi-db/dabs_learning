@@ -11,16 +11,16 @@ include:
   - resources/*.yml
   - resources/jobs/*.yml
   - resources/pipelines/*.yml
+  - resources/schemas/*.yml
   - src/*.yml
   - src/env/*.yml
   - variables/*.yml
   - variables/*/*.yml
-  - schemas/*.yml
 
 
 permissions:
   - group_name: ds_group_krish
-    level: manage
+    level: CAN_MANAGE
 
 
 targets:
