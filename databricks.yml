@@ -1,0 +1,45 @@
+# This is a Databricks asset bundle definition for dabs.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: dabs
+
+
+
+include:
+  - resources/*.yml
+  - resources/jobs/*.yml
+  - resources/pipelines/*.yml
+  - src/*.yml
+  - src/env/*.yml
+  - variables/*.yml
+
+
+
+permissions:
+  - group_name: ds_group_krish
+    level: manage
+
+
+targets:
+
+  dev:
+    mode: development
+    default: false
+    workspace:
+      host: https://e2-demo-field-eng.cloud.databricks.com
+    presets:
+      name_prefix: (dev $(workspace.current_user.short_name))
+
+
+  staging:
+    default: false
+    workspace:
+      host: https://e2-demo-field-eng.cloud.databricks.com
+
+  prod:
+    default: false
+    workspace:
+      host: https://e2-demo-field-eng.cloud.databricks.com
+
