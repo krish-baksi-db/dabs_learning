@@ -2,11 +2,35 @@ resources:
   jobs:
     sample_job:
       name: sample_job
+      description: "This is a sample job"
+      parameters:
+        - name: source_schema
+          default: ${var.source_schema}
+        - name: source_catalog
+          default: ${var.source_catalog}
+        - name: source_table
+          default: ${var.source_table}
+        - name: target_schema
+          default: ${var.target_schema}
+        - name: target_catalog
+          default: ${var.target_catalog}
+        - name: target_table
+          default: ${var.target_table}
+        - name: distance_cutoff
+          default: ${var.distance_cutoff}
       tasks:
         - task_key: simple_job
           notebook_task:
-            notebook_path: ../notebooks/simple_notebook
-          environment_key: Default
+            notebook_path: ../notebooks/simple_notebook.ipynb
+            base_parameters:
+              source_schema: "{{job.parameters.source_schema}}"
+              source_catalog: "{{job.parameters.source_catalog}}"
+              source_table: "{{job.parameters.source_table}}"
+              target_schema: "{{job.parameters.target_schema}}"
+              target_catalog: "{{job.parameters.target_catalog}}"
+              target_table: "{{job.parameters.target_table}}"
+              distance_cutoff: "{{job.parameters.distance_cutoff}}"
+
       queue:
         enabled: true
       environments:

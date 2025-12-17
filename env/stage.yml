@@ -1,0 +1,5 @@
+targets:
+  dev:
+    permissions:
+      - group_name: ds_group_krish
+        level: CAN_VIEW

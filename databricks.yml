@@ -3,7 +3,7 @@
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 
 bundle:
-  name: dabs
+  name: dabs_learning
 
 
 
@@ -14,7 +14,8 @@ include:
   - src/*.yml
   - src/env/*.yml
   - variables/*.yml
-
+  - variables/*/*.yml
+  - schemas/*.yml
 
 
 permissions:
@@ -23,14 +24,12 @@ permissions:
 
 
 targets:
-
   dev:
     mode: development
-    default: false
+    default: true
     workspace:
       host: https://e2-demo-field-eng.cloud.databricks.com
-    presets:
-      name_prefix: (dev $(workspace.current_user.short_name))
+
 
 
   staging:

@@ -1,0 +1,32 @@
+variables:
+  # Source table configuration
+  source_catalog:
+    description: "Source Catalog"
+    default: "samples"
+
+  source_schema:
+    description: "Source Schema"
+    default: "nyc_taxi"
+
+  source_table:
+    description: "Source Table"
+    default: "trips"
+
+  # Target table configuration
+  target_catalog:
+    description: "Target Catalog"
+    default: "main"
+
+  target_schema:
+    description: "Target Schema"
+    default: ""
+
+  target_table:
+    description: "Target Table"
+    default: "destination_data"
+
+  # Filter configuration
+  distance_cutoff:
+    description: "Cutoff for Distance"
+    default: "10"
+

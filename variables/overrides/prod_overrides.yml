@@ -1,0 +1,5 @@
+targets:
+  prod:
+    variables:
+      target_schema: "krish_dabs_learning_prod"
+
